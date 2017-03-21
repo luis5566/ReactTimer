@@ -5,7 +5,7 @@ var Nav = () => {
   return(
     <div>
       <IndexLink to="/" activeClassName="active-link">React Timer App</IndexLink> |
-      <Link to="/timer" activeClassName="active-link">Timer</Link> |
+      <Link to="/" activeClassName="active-link">Timer</Link> |
       <Link to="/countdown" activeClassName="active-link">Countdown</Link>
     </div>
   );

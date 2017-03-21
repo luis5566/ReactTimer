@@ -56,11 +56,18 @@
 	    hashHistory = _require.hashHistory;
 
 	var Main = __webpack_require__(222);
+	var Timer = __webpack_require__(224);
+	var Countdown = __webpack_require__(225);
 
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
-	  React.createElement(Route, { path: '/', component: Main })
+	  React.createElement(
+	    Route,
+	    { path: '/', component: Main },
+	    React.createElement(Route, { path: 'countdown', component: Countdown }),
+	    React.createElement(IndexRoute, { component: Timer })
+	  )
 	), document.getElementById('app'));
 
 /***/ },
@@ -25458,7 +25465,7 @@
 	    ' |',
 	    React.createElement(
 	      Link,
-	      { to: '/timer', activeClassName: 'active-link' },
+	      { to: '/', activeClassName: 'active-link' },
 	      'Timer'
 	    ),
 	    ' |',
@@ -25471,6 +25478,50 @@
 	};
 
 	module.exports = Nav;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Timer = React.createClass({
+	  displayName: 'Timer',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h2',
+	      null,
+	      'Timer'
+	    );
+	  }
+	});
+
+	module.exports = Timer;
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Countdown = React.createClass({
+	  displayName: 'Countdown',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h2',
+	      null,
+	      'Countdown'
+	    );
+	  }
+	});
+
+	module.exports = Countdown;
 
 /***/ }
 /******/ ]);
